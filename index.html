@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wiki System - Login & Register</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Video Nền -->
+    <video autoplay muted loop playsinline class="video-bg">
+        <source src="background.mp4" type="video/mp4">
+    </video>
+    <div class="overlay"></div>
+
+    <div class="container">
+        <!-- FORM ĐĂNG NHẬP -->
+        <div class="form-box" id="loginForm">
+            <h2>ĐĂNG NHẬP</h2>
+            <input type="text" id="loginUser" placeholder="Tên đăng nhập">
+            <input type="password" id="loginPass" placeholder="Mật khẩu">
+            <button onclick="handleLogin()">VÀO HỆ THỐNG</button>
+            <p>Chưa có tài khoản? <a href="#" onclick="toggleForm('registerForm')">Đăng ký ngay</a></p>
+        </div>
+
+        <!-- FORM ĐĂNG KÝ (Mặc định ẩn) -->
+        <div class="form-box" id="registerForm" style="display: none;">
+            <h2>TẠO TÀI KHOẢN</h2>
+            <input type="text" id="regUser" placeholder="Tên đăng nhập mới">
+            <input type="password" id="regPass" placeholder="Mật khẩu">
+            <input type="password" id="regConfirm" placeholder="Xác nhận mật khẩu">
+            <button onclick="handleRegister()">ĐĂNG KÝ</button>
+            <p>Đã có tài khoản? <a href="#" onclick="toggleForm('loginForm')">Đăng nhập</a></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

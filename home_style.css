@@ -1,0 +1,73 @@
+/* (Giữ nguyên phần thiết lập chung, video-bg và overlay như cũ) */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+body { background-color: #000; color: white; overflow-x: hidden; }
+.video-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+.overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.8) 100%); z-index: -1; }
+
+/* Navbar sửa lại để chứa con Minion */
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 8%;
+    background: rgba(15, 15, 15, 0.85);
+    backdrop-filter: blur(15px);
+    position: sticky; top: 0; z-index: 100;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #fce303; /* Đổi màu vàng kiểu Minion */
+    letter-spacing: 1px;
+}
+
+.minion-nav-icon {
+    width: 40px; /* Độ lớn con minion trên thanh bar */
+    margin-right: 10px;
+}
+
+.menu { display: flex; gap: 25px; align-items: center; }
+.menu a { color: #ddd; text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: 0.3s; }
+.menu a:hover { color: #fce303; }
+
+/* Nút Discord màu xanh đặc trưng */
+.discord-btn {
+    padding: 10px 25px;
+    border-radius: 12px;
+    background: #5865F2 !important; /* Màu xanh Discord */
+    color: white !important;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(88, 101, 242, 0.3);
+}
+
+.discord-btn:hover {
+    background: white !important;
+    color: #5865F2 !important;
+    transform: scale(1.05);
+}
+
+/* Nội dung trung tâm */
+.home-content { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; min-height: 85vh; padding: 0 20px; }
+
+.logo-large {
+    width: 200px; /* Con minion chính ở giữa */
+    filter: drop-shadow(0 0 20px rgba(252, 227, 3, 0.4));
+    animation: bounce 4s ease-in-out infinite;
+}
+
+@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+
+.main-title { font-size: clamp(2.5rem, 7vw, 4.2rem); font-weight: 800; line-height: 1.1; }
+.highlight { color: #fce303; } /* Chữ Minionland màu vàng */
+
+.sub-text { font-size: 1.1rem; color: #aaa; max-width: 650px; margin: 20px 0 40px; }
+
+.search-bar-input {
+    width: 100%; max-width: 550px; padding: 18px 25px; border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.08); backdrop-filter: blur(20px); color: white; outline: none;
+}
